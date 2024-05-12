@@ -16,6 +16,8 @@ pygame.display.set_caption('Flappy Bird')
 #define game variables
 ground_scroll = 0
 scroll_speed = 4
+flying = False
+game_over = False
 
 #load images
 bg = pygame.image.load('img/bg.png')
@@ -33,7 +35,8 @@ class Bird(pygame.sprite.Sprite):
 		self.image = self.images[self.index]
 		self.rect = self.image.get_rect()
 		self.rect.center = [x, y]
-
+		self.vel = 0
+		self.clicked = False
 
 	def update(self):
 
