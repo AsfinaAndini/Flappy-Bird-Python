@@ -39,6 +39,13 @@ class Bird(pygame.sprite.Sprite):
 		self.clicked = False
 
 	def update(self):
+		if flying == True:
+			#gravity
+			self.vel += 0.5
+			if self.vel > 8:
+				self.vel = 8
+			if self.rect.bottom < 768:
+				self.rect.y += int(self.vel)
 
 		#handle the animation
 		self.counter += 1
